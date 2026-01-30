@@ -25,7 +25,7 @@ import frc.robot.subsystems.Intake.Intake;
 public class RobotContainer {
   // The robot's subsystems
   private final CANDriveSubsystem driveSubsystem = new CANDriveSubsystem();
-  private final Intake intakeSubsystem = new Intake();
+  // private final Intake intakeSubsystem = new Intake();
   private final Launcher launcherSubsystem = new Launcher();
 
   // The driver's controller
