@@ -15,6 +15,8 @@ import frc.robot.commands.drive.Drive;
 import frc.robot.subsystems.CANDriveSubsystem;
 import frc.robot.subsystems.Launcher;
 import frc.robot.subsystems.Intake.Intake;
+import frc.robot.subsystems.Intake.IntakeIO;
+import frc.robot.subsystems.Intake.IntakeIOHardware;
 /**
  * This class is where the bulk of the robot should be declared. Since
  * Command-based is a "declarative" paradigm, very little robot logic should
@@ -25,7 +27,7 @@ import frc.robot.subsystems.Intake.Intake;
 public class RobotContainer {
   // The robot's subsystems
   private final CANDriveSubsystem driveSubsystem = new CANDriveSubsystem();
-  // private final Intake intakeSubsystem = new Intake();
+  private final Intake intakeSubsystem = new Intake(new IntakeIOHardware());
   private final Launcher launcherSubsystem = new Launcher();
 
   // The driver's controller
@@ -69,6 +71,9 @@ public class RobotContainer {
     // stick away from you (a negative value) drives the robot forwards (a positive
     // value)
     driveSubsystem.setDefaultCommand(new Drive(driveSubsystem, driverController));
+
+    Constants.OperatorConstants.buttonLB.whileTrue(intakeSubsystem.runIntake());
+    Constants.OperatorConstants.buttonRB.whileTrue(intakeSubsystem.reverseIntake());
 
   }
 

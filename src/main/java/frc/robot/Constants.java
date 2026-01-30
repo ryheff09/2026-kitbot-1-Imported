@@ -4,6 +4,9 @@
 
 package frc.robot;
 
+import edu.wpi.first.wpilibj.XboxController;
+import edu.wpi.first.wpilibj2.command.button.JoystickButton;
+
 /**
  * The Constants class provides a convenient place for teams to hold robot-wide
  * numerical or boolean constants. This class should not be used for any other
@@ -50,6 +53,9 @@ public final class Constants {
   public static final class OperatorConstants {
     // Port constants for driver and operator controllers. These should match the
     // values in the Joystick tab of the Driver Station software
+    public static final int kDriverControllerPort = 0;
+    public static final XboxController xBox = new XboxController(2);
+
     public static final int DRIVER_CONTROLLER_PORT = 0;
     public static final int OPERATOR_CONTROLLER_PORT = 1;
 
@@ -57,5 +63,7 @@ public final class Constants {
     // help avoid turning too fast and beign difficult to control
     public static final double DRIVE_SCALING = .7;
     public static final double ROTATION_SCALING = .8;
+    public static final JoystickButton buttonLB = new JoystickButton(xBox, 7);
+    public static final JoystickButton buttonRB = new JoystickButton(xBox, 8);
   }
 }
