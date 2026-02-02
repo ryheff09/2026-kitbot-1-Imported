@@ -10,11 +10,10 @@ import com.revrobotics.spark.config.SparkMaxConfig;
 import edu.wpi.first.wpilibj.DigitalInput;
 
 /**
- * Contains all of the physical hardware objects, including a Spark Max motor
- * and corresponding encoder. This also implements the methods specified in
- * the IO interface to set the speed of the pysical motor as well as update the
- * values
- * of the inputs using the encoder.
+ * This class contains all of the physical hardware objects, including a Spark Max motor
+ * and corresponding encoder. It also implements the methods specified in
+ * the IO interface to set the speed of the physical motor as well as update the
+ * values of the inputs using the encoder.
  * 
  * @Author Ryan Hefferon
  */

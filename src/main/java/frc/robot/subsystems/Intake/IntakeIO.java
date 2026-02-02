@@ -20,7 +20,7 @@ public interface IntakeIO {
 
         public double intakeVelocityRPM = 0.0;
         public double intakePositionRotations = 0.0;
-        public boolean hasFuel;
+        public boolean hasFuel = false;
     }
 
     default void setSpeed(double speed) {

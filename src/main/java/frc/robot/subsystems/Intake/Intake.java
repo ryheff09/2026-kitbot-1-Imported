@@ -13,12 +13,10 @@ import edu.wpi.first.wpilibj2.command.button.Trigger;
 
 /**
  * This class contains an instance of the IO interface, which it uses to run the
- * motor
- * in commands, both forward and backward. It also updates the inputs
- * periocially and
- * stores the values of the inputs using the Logger.
+ * motor in commands, both forward and backward. It also updates the inputs
+ * periocially and stores the values of the inputs using the Logger.
  * 
- * @Author Ryan Hefferon
+ * @author Ryan Hefferon
  */
 public class Intake extends SubsystemBase {
 
@@ -33,18 +31,22 @@ public class Intake extends SubsystemBase {
     this.io = io;
   }
 
+  /** This command runs the intake until the fuel is inside the robot. */
   public Command runIntake() {
     return Commands.startEnd(
         () -> io.setSpeed(0.5),
         () -> io.setSpeed(0),
-        this).until(fuelIntook);
+        this)
+        .until(fuelIntook);
   }
 
+  /** This command runs the intake in reverse until the fuel is not inside the robot. */
   public Command reverseIntake() {
     return Commands.startEnd(
         () -> io.setSpeed(-0.5),
         () -> io.setSpeed(0),
-        this).until(fuelOuttook);
+        this)
+        .until(fuelOuttook);
   }
 
   @Override
